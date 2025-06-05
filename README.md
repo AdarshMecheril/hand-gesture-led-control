@@ -1,48 +1,33 @@
-# hand-gesture-led-control
-Control LEDs using hand gestures via OpenCV and Arduino
-
-## 🔌 Circuit Diagram
-
-The following image shows the circuit for connecting LEDs to Arduino:
-
-![Circuit Diagram](hand-gesture-led-control/Images/circuit_diagram.png)
-
-- LED1 → Pin 2  
-- LED2 → Pin 3  
-- ...  
-- GND → Common Ground
-
 # 🤚 Hand Gesture LED Control using OpenCV & Arduino
 
-This project lets you control 5 LEDs with simple hand gestures using a webcam and an Arduino Uno. It uses **OpenCV** and **MediaPipe** to detect finger gestures in real-time, and sends commands to Arduino to light up LEDs based on how many fingers are raised.
-
-It’s a beginner-friendly project that combines computer vision and hardware interaction.
+This project enables control of 5 LEDs using simple hand gestures captured via a webcam. Utilizing **OpenCV** and **MediaPipe**, the system detects finger gestures in real-time and communicates with an Arduino Uno to illuminate LEDs corresponding to the number of fingers raised.
 
 ---
 
 ## 📁 Project Structure
 
-
+```
 hand-gesture-led-control/
 ├── Arduino/
-│ └── led_control.ino # Arduino code to control the LEDs
+│   └── led_control.ino          # Arduino code to control the LEDs
 ├── Python/
-│ └── hand_tracking_led.py # Python code to track hand gestures and send signals
+│   └── hand_tracking_led.py     # Python code to track hand gestures and send signals
+├── images/
+│   └── circuit_diagram.png      # Circuit diagram image
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
-
+```
 
 ---
 
 ## 🔌 Circuit Diagram
 
-The circuit below shows how 5 LEDs are connected to the Arduino:
+The following diagram illustrates the connection of 5 LEDs to the Arduino Uno:
 
 ![Circuit Diagram](images/circuit_diagram.png)
 
-Each LED is connected to a digital pin on the Arduino, with a resistor in series to prevent overcurrent.
+Each LED is connected to a digital pin on the Arduino, with a 220Ω resistor in series to prevent overcurrent.
 
 | LED Number | Arduino Pin |
 |------------|-------------|
@@ -52,16 +37,16 @@ Each LED is connected to a digital pin on the Arduino, with a resistor in series
 | LED 4      | D5          |
 | LED 5      | D6          |
 
-Make sure all LED cathodes are connected to GND, and use 220Ω resistors on the anode side.
+Ensure all LED cathodes are connected to GND.
 
 ---
 
-## 🛠 What You’ll Need
+## 🛠 Requirements
 
 - Arduino Uno R3
 - 5 LEDs
 - 5 × 220Ω resistors
-- Breadboard + jumper wires
+- Breadboard and jumper wires
 - USB cable
 - PC or laptop with Python installed
 - Webcam (built-in or external)
@@ -71,59 +56,59 @@ Make sure all LED cathodes are connected to GND, and use 220Ω resistors on the 
 ## 💡 How It Works
 
 1. The webcam captures your hand in real-time.
-2. The Python script processes the hand using MediaPipe and checks how many fingers are up.
-3. Based on the number of raised fingers (0 to 5), a number is sent via serial to the Arduino.
-4. The Arduino receives the number and turns ON that many LEDs starting from pin 2.
+2. The Python script processes the hand using MediaPipe and determines the number of fingers raised.
+3. Based on the count (0 to 5), a corresponding number is sent via serial communication to the Arduino.
+4. The Arduino receives the number and activates that many LEDs starting from pin D2.
 
-**Example:**
-- Raise 3 fingers → LEDs on D2, D3, D4 turn ON  
-- Fist (0 fingers) → All LEDs OFF
+**Example**:
+- Raising 3 fingers → LEDs on D2, D3, and D4 turn ON.
+- Making a fist (0 fingers) → All LEDs turn OFF.
 
 ---
 
 ## 🧪 Getting Started
-```bash
 
 ### Step 1: Install Python Dependencies
 
+```bash
 pip install opencv-python mediapipe pyserial
-
 ```
-Step 2: Run the Python Script
-Open the Python file from the Python folder and make sure the serial port (e.g., COM3, /dev/ttyUSB0) matches your Arduino.
+
+### Step 2: Run the Python Script
+
+Navigate to the `Python` directory and execute the script. Ensure the serial port (e.g., `COM3` on Windows or `/dev/ttyUSB0` on Linux) matches your Arduino's connection.
 
 ```bash
 python hand_tracking_led.py
-
 ```
-Step 3: Upload Arduino Code
-Upload the led_control.ino from the Arduino folder to your Arduino using the Arduino IDE.
 
-🚀 Possible Extensions
-Use more complex gestures to control different devices
+### Step 3: Upload Arduino Code
 
-Replace LEDs with relays to control appliances
+Use the Arduino IDE to upload `led_control.ino` from the `Arduino` directory to your Arduino Uno.
 
-Build a full hand-controlled interface for IoT or robotics
+---
 
+## 🚀 Possible Extensions
 
+- Implement more complex gestures to control different devices.
+- Replace LEDs with relays to manage higher voltage appliances.
+- Develop a comprehensive hand-controlled interface for IoT or robotics applications.
 
+---
 
-👨‍💻 Author
-Adarsh Mecheril
+## 👨‍💻 Author
+
+**Adarsh Mecheril**
 
 Feel free to fork the project, suggest improvements, or contribute!
 
+---
 
-📄 License
-This project is licensed under the MIT License.
+## 📄 License
 
+This project is licensed under the [MIT License](LICENSE).
 
-
-
-
-
-
+---
 
 
 
