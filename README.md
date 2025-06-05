@@ -84,7 +84,7 @@ Make sure all LED cathodes are connected to GND, and use 220Ω resistors on the 
 ## 🧪 Getting Started
 
 ### Step 1: Install Python Dependencies
-```bash
+
 pip install opencv-python mediapipe pyserial
 
 
