@@ -91,7 +91,7 @@ pip install opencv-python mediapipe pyserial
 ```
 Step 2: Run the Python Script
 Open the Python file from the Python folder and make sure the serial port (e.g., COM3, /dev/ttyUSB0) matches your Arduino.
-```
+
 ```bash
 python hand_tracking_led.py
 
