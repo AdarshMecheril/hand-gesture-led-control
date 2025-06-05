@@ -118,11 +118,6 @@ Feel free to fork the project, suggest improvements, or contribute!
 📄 License
 This project is licensed under the MIT License.
 
----
-
-✅ You can rename the circuit diagram image to `circuit_diagram.png` and place it inside an `images` folder for the image link to work.
-
-Let me know if you'd like to embed a GIF demo or add screenshots as well.
 
 
 
