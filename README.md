@@ -93,11 +93,21 @@ Step 2: Run the Python Script
 Open the Python file from the Python folder and make sure the serial port (e.g., COM3, /dev/ttyUSB0) matches your Arduino.
 ```
 ```
+```bash
 python hand_tracking_led.py
 
-
+```
 Step 3: Upload Arduino Code
 Upload the led_control.ino from the Arduino folder to your Arduino using the Arduino IDE.
+
+🚀 Possible Extensions
+Use more complex gestures to control different devices
+
+Replace LEDs with relays to control appliances
+
+Build a full hand-controlled interface for IoT or robotics
+
+
 
 
 👨‍💻 Author
